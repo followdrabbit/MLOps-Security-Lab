@@ -1,6 +1,6 @@
-# 🛡️ MLOps Security Lab — README Unificado (Arquitetura + Hands-on)
+# 🛡️ MLOps Security Lab — (Arquitetura + Hands-on)
 
-> Este README unifica a **arquitetura conceitual** (Z0–Z9) com o **laboratório prático passo a passo** (Docs 01–07), conectando o *porquê* de cada camada com o *como implementar* tudo em uma única VPS endurecida.
+>Este README unifica a arquitetura conceitual (Z0–Z9) e o laboratório prático passo a passo (Docs 01–07), conectando o porquê de cada camada ao como implementar tudo em uma única VPS com hardening aplicado, para apoiar meu aprendizado em MLOps seguro: entender as terminologias, as etapas do fluxo MLOps, os ataques mais relevantes e os controles necessários para proteger dados, modelos e infraestrutura.
 
 ---
 

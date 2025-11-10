@@ -1,7 +1,7 @@
 Perfeito, vamos alinhar totalmente.
 # Z1 — Ingestion & Security Gateway
 
-![Diagram](../assets/Project_Diagram-Z1.drawio.svg)
+![Diagram](../../assets/Project_Diagram-Z1.drawio.svg)
 
 ## 1. Papel da Z1 no MLOps Security Lab
 

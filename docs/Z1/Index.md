@@ -1,4 +1,3 @@
-Perfeito, vamos alinhar totalmente.
 # Z1 — Ingestion & Security Gateway
 
 ![Diagram](../../assets/Project_Diagram-Z1.drawio.svg)

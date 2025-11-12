@@ -1,4 +1,4 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.8 Chrome/140.0.7339.240 Electron/38.4.0 Safari/537.36" version="28.2.8" pages="4">
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.8 Chrome/140.0.7339.240 Electron/38.4.0 Safari/537.36" version="28.2.8" pages="5">
   <diagram name="MLOPS" id="Idk3U2ZkPH-DtoqKMZVC">
     <mxGraphModel dx="1281" dy="1795" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -416,6 +416,29 @@
         </mxCell>
         <mxCell id="vN6Blx1OX0u9fGnxYdQS-20" value="Raw Zone&#xa;(Criptografado, Versionado, Assinado)" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="vN6Blx1OX0u9fGnxYdQS-1">
           <mxGeometry x="1958" y="295" width="220" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Z3" id="zoOG8JQfJU4uufnDDrXc">
+    <mxGraphModel dx="-346" dy="1043" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="nJRm3Z3GR54Y5GltDbEo-0" />
+        <mxCell id="nJRm3Z3GR54Y5GltDbEo-1" parent="nJRm3Z3GR54Y5GltDbEo-0" />
+        <mxCell id="nJRm3Z3GR54Y5GltDbEo-21" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" vertex="1" parent="nJRm3Z3GR54Y5GltDbEo-1">
+          <mxGeometry x="2695" y="195" width="400" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="nJRm3Z3GR54Y5GltDbEo-22" value="&lt;h2 data-end=&quot;591&quot; data-start=&quot;545&quot;&gt;Z3 - Curated &amp;amp; Feature Store&lt;/h2&gt;&lt;p data-end=&quot;620&quot; data-start=&quot;593&quot;&gt;&lt;/p&gt;" style="text;whiteSpace=wrap;html=1;verticalAlign=middle;fontSize=12;align=center;" vertex="1" parent="nJRm3Z3GR54Y5GltDbEo-1">
+          <mxGeometry x="2695" y="225" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nJRm3Z3GR54Y5GltDbEo-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;flowAnimation=1;" edge="1" parent="nJRm3Z3GR54Y5GltDbEo-1" source="nJRm3Z3GR54Y5GltDbEo-24" target="nJRm3Z3GR54Y5GltDbEo-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nJRm3Z3GR54Y5GltDbEo-24" value="Curated Zone" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="nJRm3Z3GR54Y5GltDbEo-1">
+          <mxGeometry x="2785" y="295" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nJRm3Z3GR54Y5GltDbEo-26" value="Feature Store" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="nJRm3Z3GR54Y5GltDbEo-1">
+          <mxGeometry x="2785" y="375" width="220" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

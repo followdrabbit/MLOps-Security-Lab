@@ -38,7 +38,7 @@ No contexto do **MLOps Security Lab**:
 
 A Z2 é menos “serviços expostos” e mais **como o storage é configurado, segmentado e governado**.
 
-### 2.1 Raw Zone (Object Storage seguro)
+### 2.1 Raw Zone (Object Storage seguro) - [Detalhamento](./Z2-2.1.md)
 
 * Repositório central (ex.: MinIO/S3-like) para armazenamento de dados brutos.
 * Organização recomendada:
@@ -55,7 +55,7 @@ A Z2 é menos “serviços expostos” e mais **como o storage é configurado, s
 
 ---
 
-### 2.2 Criptografia em repouso & KMS
+### 2.2 Criptografia em repouso & KMS - [Detalhamento](./Z2-2.2.md)
 
 * Todos os objetos em Z2 devem ser protegidos com **criptografia em repouso**:
 
@@ -71,7 +71,7 @@ Se alguém tiver acesso físico ou dump de disco, não lê nada útil.
 
 ---
 
-### 2.3 Network Isolation & Endpoint Policy
+### 2.3 Network Isolation & Endpoint Policy - [Detalhamento](./Z2-2.3.md)
 
 * Z2 só é acessível via:
 
@@ -88,7 +88,7 @@ Se alguém tiver acesso físico ou dump de disco, não lê nada útil.
 
 ---
 
-### 2.4 Controles de Acesso (IAM / ABAC / Least Privilege)
+### 2.4 Controles de Acesso (IAM / ABAC / Least Privilege) - [Detalhamento](./Z2-2.4.md)
 
 * Acesso baseado em:
 
@@ -109,7 +109,7 @@ Se alguém tiver acesso físico ou dump de disco, não lê nada útil.
 
 ---
 
-### 2.5 Versionamento & Imutabilidade
+### 2.5 Versionamento & Imutabilidade - [Detalhamento](./Z2-2.5.md)
 
 * **Versioning habilitado**:
 
@@ -131,7 +131,7 @@ Se alguém tiver acesso físico ou dump de disco, não lê nada útil.
 
 ---
 
-### 2.6 Integridade & Metadados
+### 2.6 Integridade & Metadados - [Detalhamento](./Z2-2.6.md)
 
 * Armazenar ou calcular:
 
@@ -149,7 +149,7 @@ Se alguém tiver acesso físico ou dump de disco, não lê nada útil.
 
 ---
 
-### 2.7 Áreas de Staging, Quarentena & Reprocessamento
+### 2.7 Áreas de Staging, Quarentena & Reprocessamento - [Detalhamento](./Z2-2.7.md)
 
 * Áreas separadas dentro da própria Z2 (ou adjacentes) para:
 
@@ -161,7 +161,7 @@ Se alguém tiver acesso físico ou dump de disco, não lê nada útil.
 
 ---
 
-### 2.8 Logging de Acesso & Integração com Z9
+### 2.8 Logging de Acesso & Integração com Z9 - [Detalhamento](./Z2-2.8.md)
 
 * Todas as operações sensíveis em Z2 devem ser logadas:
 

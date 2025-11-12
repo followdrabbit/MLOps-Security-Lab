@@ -32,7 +32,7 @@ Se não passa por Z1, **não entra no ecossistema de dados e modelos**.
 
 A Z1 é composta por blocos que, juntos, formam o **Ingestion & Security Gateway**.
 
-### 2.1 Reverse Proxy / API Gateway (Ingestion Gateway) [Detalhamento](./Z1-2.1.md))
+### 2.1 Reverse Proxy / API Gateway (Ingestion Gateway) - [Detalhamento](./Z1-2.1.md))
 
 Responsável por:
 
@@ -51,7 +51,7 @@ Responsável por:
 
 ---
 
-### 2.2 WAF (Web Application Firewall) [Detalhamento](./Z1-2.2.md)
+### 2.2 WAF (Web Application Firewall) - [Detalhamento](./Z1-2.2.md)
 
 Colocado na frente ou integrado ao gateway para:
 
@@ -69,7 +69,7 @@ Colocado na frente ou integrado ao gateway para:
 
 ---
 
-### 2.3 Autenticação & Autorização (AuthN/AuthZ) na borda [Detalhamento](./Z1-2.3.md)
+### 2.3 Autenticação & Autorização (AuthN/AuthZ) na borda - [Detalhamento](./Z1-2.3.md)
 
 Todo produtor (externo ou interno) que envia dados deve:
 
@@ -92,7 +92,7 @@ Todo produtor (externo ou interno) que envia dados deve:
 
 ---
 
-### 2.4 Content Validation (Validação de Conteúdo) [Detalhamento](./Z1-2.4.md)
+### 2.4 Content Validation (Validação de Conteúdo) - [Detalhamento](./Z1-2.4.md)
 
 Antes de aceitar o dado, Z1 checa:
 
@@ -111,7 +111,7 @@ Antes de aceitar o dado, Z1 checa:
 
 ---
 
-### 2.5 Anti-malware, CDR & Sandbox [Detalhamento](./Z1-2.5.md)
+### 2.5 Anti-malware, CDR & Sandbox - [Detalhamento](./Z1-2.5.md)
 
 Para uploads de arquivos:
 
@@ -132,7 +132,7 @@ Para uploads de arquivos:
 
 ---
 
-### 2.6 Data Quality & Anomaly Checks (Higiene inicial) [Detalhamento](./Z1-2.6.md)
+### 2.6 Data Quality & Anomaly Checks (Higiene inicial) - [Detalhamento](./Z1-2.6.md)
 
 Z1 também aplica checagens leves de sanidade:
 
@@ -144,7 +144,7 @@ Não é “modelagem”, é **higiene de entrada** para reduzir lixo óbvio.
 
 ---
 
-### 2.7 ETL / Streaming / MQ (Conectores Oficiais) [Detalhamento](./Z1-2.7.md)
+### 2.7 ETL / Streaming / MQ (Conectores Oficiais) - [Detalhamento](./Z1-2.7.md)
 
 Após passar pelos controles:
 
@@ -162,7 +162,7 @@ Após passar pelos controles:
 
 ---
 
-### 2.8 Auditoria & Observabilidade [Detalhamento](./Z1-2.8.md)
+### 2.8 Auditoria & Observabilidade - [Detalhamento](./Z1-2.8.md)
 
 Z1 registra:
 

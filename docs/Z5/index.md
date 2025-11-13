@@ -21,31 +21,31 @@
 
 ## 2) Componentes da Z5
 
-### 2.1 Registry Core (catálogo de modelos) — [Detalhamento](./Z5-2.1.md)
+### 2.1 Registry Core (catálogo de modelos) — [Detalhamento](.Z5.2.1.md)
 
 * Armazena **versões imutáveis** com `name:version` + `digest`.
 * Mantém **tags/attrs** (run_id, dataset@snapshot, container_digest, sbom_ref, policy_digest, approvers).
 * **No lab:** MLflow Model Registry (mas o desenho vale para qualquer registry corporativo).
 
-### 2.2 Verificação de Assinaturas & Attestations — [Detalhamento](./Z5-2.2.md)
+### 2.2 Verificação de Assinaturas & Attestations — [Detalhamento](.Z5-2.2.md)
 
 * **Entrada (upload)**: validar **cosign sig** (artefato/imagem), **in-toto/SLSA** (proveniência), **checksums** (manifest).
 * **Saída (download/consumo)**: **reverificar** assinatura/attestation e checar **revogação** (CRL/rekor/estado).
 * Bloqueia submissões **sem** evidências ou com **cadeia inválida**.
 
-### 2.3 Policy Engine & Gates (Policy-as-Code) — [Detalhamento](./Z5-2.3.md)
+### 2.3 Policy Engine & Gates (Policy-as-Code) — [Detalhamento](.Z5-2.3.md)
 
 * Políticas OPA/Rego determinam **accept/reject** e **promoção** (`Candidate→Staging→Approved`).
 * Gates típicos exigem: `security_decision=PASS`, **SBOM sem CVEs bloqueadoras**, **Model Card completo**, **attestation** coerente, **fairness** e **SLO profile**.
 * Integra **LGPD** (finalidade/base legal) via *tags* do catálogo de dados.
 
-### 2.4 Metadados de Governança (Model Card, SCDR, ADR) — [Detalhamento](./Z5-2.4.md)
+### 2.4 Metadados de Governança (Model Card, SCDR, ADR) — [Detalhamento](.Z5-2.4.md)
 
 * **Model Card** final (finalidade, limites, riscos, salvaguardas, público-alvo).
 * **SCDR/ADR** linkados ao `run_id` e à versão (decisões de segurança/arquitetura, risco residual, condicionantes).
 * Tornam a promoção **auditável** e **explicável**.
 
-### 2.5 Versionamento, Estados & Imutabilidade — [Detalhamento](./Z5-2.5.md)
+### 2.5 Versionamento, Estados & Imutabilidade — [Detalhamento](.Z5-2.5.md)
 
 * Versões são **imutáveis**; alterações ⇒ **nova versão**.
 * Estados e transições:
@@ -56,28 +56,28 @@
   * `Revoked` (bloqueado para carga/uso)
 * Transições **somente via pipeline** com verificação de assinatura/políticas.
 
-### 2.6 Acesso & Tenancy (IAM/ABAC) — [Detalhamento](./Z5-2.6.md)
+### 2.6 Acesso & Tenancy (IAM/ABAC) — [Detalhamento](.Z5-2.6.md)
 
 * **RBAC/ABAC** para quem **lê**, **promove**, **revoga** e **assina**.
 * Segrega **times/dominios/parceiros** (multi-tenant) e aplica **SoD** (segregação de funções).
 
-### 2.7 Promoção & Change Management — [Detalhamento](./Z5-2.7.md)
+### 2.7 Promoção & Change Management — [Detalhamento](.Z5-2.7.md)
 
 * **Promotion gates** com *four-eyes* (Segurança + Produto) e *change ticket* (janela, rollback, impacto).
 * Publica **release artifacts**: `release_manifest.json`, `policy_snapshot/`, `release_notes.md`, `dashboards_links.json`.
 
-### 2.8 Revogação, Quarentena & Rollback — [Detalhamento](./Z5-2.8.md)
+### 2.8 Revogação, Quarentena & Rollback — [Detalhamento](.Z5-2.8.md)
 
 * `Revoked` invalida consumo pela Z6; **purga de cache** no serving é obrigatória.
 * Quarentena para versões sob investigação; **runbook** de rollback para versão **Approved** anterior.
 
-### 2.9 Integridade de Download (para Z6) — [Detalhamento](./Z5-2.9.md)
+### 2.9 Integridade de Download (para Z6) — [Detalhamento](.Z5-2.9.md)
 
 * Z6 só carrega `stage in {"Staging","Approved"}` **com**:
   **assinatura válida**, **attestation presente**, **policy_digest** correspondente, **não revogado**.
 * Falha na verificação ⇒ **bloqueia startup**.
 
-### 2.10 Integrações (Z6, Z8, Z9) — [Detalhamento](./Z5-2.10.md)
+### 2.10 Integrações (Z6, Z8, Z9) — [Detalhamento](.Z5-2.10.md)
 
 * **Z6**: *startup check* de assinatura/attestation/políticas.
 * **Z8**: Vault/KMS (chaves/rotação), IAM (papéis), DLP (marcação de modelos sensíveis).

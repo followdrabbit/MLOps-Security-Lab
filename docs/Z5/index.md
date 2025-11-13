@@ -21,7 +21,7 @@
 
 ## 2) Componentes da Z5
 
-### 2.1 Registry Core (catálogo de modelos) — [Detalhamento](./Z5.2.1.md)
+### 2.1 Registry Core (catálogo de modelos) — [Detalhamento](./Z5-2.1.md)
 
 * Armazena **versões imutáveis** com `name:version` + `digest`.
 * Mantém **tags/attrs** (run_id, dataset@snapshot, container_digest, sbom_ref, policy_digest, approvers).

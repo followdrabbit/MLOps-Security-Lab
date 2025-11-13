@@ -1,4 +1,4 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.8 Chrome/140.0.7339.240 Electron/38.4.0 Safari/537.36" version="28.2.8" pages="5">
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.8 Chrome/140.0.7339.240 Electron/38.4.0 Safari/537.36" version="28.2.8" pages="7">
   <diagram name="MLOPS" id="Idk3U2ZkPH-DtoqKMZVC">
     <mxGraphModel dx="1281" dy="1795" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -439,6 +439,94 @@
         </mxCell>
         <mxCell id="nJRm3Z3GR54Y5GltDbEo-26" value="Feature Store" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="nJRm3Z3GR54Y5GltDbEo-1">
           <mxGeometry x="2785" y="375" width="220" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Z4" id="6eZ_1JdkozrsE66aSx1X">
+    <mxGraphModel dx="1003" dy="894" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="uC3lF-58yHEb4NURm8RH-0" />
+        <mxCell id="uC3lF-58yHEb4NURm8RH-1" parent="uC3lF-58yHEb4NURm8RH-0" />
+        <mxCell id="uC3lF-58yHEb4NURm8RH-27" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" vertex="1" parent="uC3lF-58yHEb4NURm8RH-1">
+          <mxGeometry x="880" y="460" width="1660" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="uC3lF-58yHEb4NURm8RH-28" value="&lt;h2 data-end=&quot;591&quot; data-start=&quot;545&quot;&gt;Z4 - Model Factory (Dev/Train)&lt;/h2&gt;&lt;p data-end=&quot;620&quot; data-start=&quot;593&quot;&gt;&lt;/p&gt;" style="text;whiteSpace=wrap;html=1;verticalAlign=middle;fontSize=12;align=center;" vertex="1" parent="uC3lF-58yHEb4NURm8RH-1">
+          <mxGeometry x="880" y="490" width="1660" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="uC3lF-58yHEb4NURm8RH-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;flowAnimation=1;" edge="1" parent="uC3lF-58yHEb4NURm8RH-1" source="uC3lF-58yHEb4NURm8RH-30" target="uC3lF-58yHEb4NURm8RH-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uC3lF-58yHEb4NURm8RH-30" value="ML Workbench&#xa;(Notebooks / IDE Seguros)" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="uC3lF-58yHEb4NURm8RH-1">
+          <mxGeometry x="2290" y="500" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="uC3lF-58yHEb4NURm8RH-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;flowAnimation=1;" edge="1" parent="uC3lF-58yHEb4NURm8RH-1" source="uC3lF-58yHEb4NURm8RH-32" target="uC3lF-58yHEb4NURm8RH-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uC3lF-58yHEb4NURm8RH-32" value="Training Pipelines&#xa;(Ambiente Isolado, Service Accounts,Least Privilege, Sem Acesso Direto a Prod)" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="uC3lF-58yHEb4NURm8RH-1">
+          <mxGeometry x="1725" y="580" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uC3lF-58yHEb4NURm8RH-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;flowAnimation=1;" edge="1" parent="uC3lF-58yHEb4NURm8RH-1" source="uC3lF-58yHEb4NURm8RH-34" target="uC3lF-58yHEb4NURm8RH-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uC3lF-58yHEb4NURm8RH-34" value="Code &amp; Config Repos&#xa;(Git, IaC, Policies-as-Code, SAST, Secret Scan, SBOM)" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="uC3lF-58yHEb4NURm8RH-1">
+          <mxGeometry x="2290" y="580" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uC3lF-58yHEb4NURm8RH-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;flowAnimation=1;" edge="1" parent="uC3lF-58yHEb4NURm8RH-1" source="uC3lF-58yHEb4NURm8RH-36" target="uC3lF-58yHEb4NURm8RH-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uC3lF-58yHEb4NURm8RH-36" value="Dependency &amp; Image Scanning&#xa;(Vuln Scan, Base Images Corporativas)" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="uC3lF-58yHEb4NURm8RH-1">
+          <mxGeometry x="2010" y="580" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uC3lF-58yHEb4NURm8RH-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;flowAnimation=1;" edge="1" parent="uC3lF-58yHEb4NURm8RH-1" source="uC3lF-58yHEb4NURm8RH-38" target="uC3lF-58yHEb4NURm8RH-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uC3lF-58yHEb4NURm8RH-38" value="Dataset Catalog &amp; Policy Checks&#xa;(Apenas Datasets Autorizados/Classificados)" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="uC3lF-58yHEb4NURm8RH-1">
+          <mxGeometry x="2010" y="690" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uC3lF-58yHEb4NURm8RH-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;flowAnimation=1;" edge="1" parent="uC3lF-58yHEb4NURm8RH-1" source="uC3lF-58yHEb4NURm8RH-40" target="uC3lF-58yHEb4NURm8RH-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uC3lF-58yHEb4NURm8RH-40" value="Model Provenance&#xa;(Dataset+Código+Libs+Params+Hash)" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="uC3lF-58yHEb4NURm8RH-1">
+          <mxGeometry x="1460" y="580" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uC3lF-58yHEb4NURm8RH-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;flowAnimation=1;" edge="1" parent="uC3lF-58yHEb4NURm8RH-1" source="uC3lF-58yHEb4NURm8RH-42" target="uC3lF-58yHEb4NURm8RH-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uC3lF-58yHEb4NURm8RH-42" value="Functional &amp; Performance Evaluation" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="uC3lF-58yHEb4NURm8RH-1">
+          <mxGeometry x="1193" y="580" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uC3lF-58yHEb4NURm8RH-44" value="Security &amp; Adversarial Tests&#xa;(Robustez, Privacy, Abuse Cases)" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="uC3lF-58yHEb4NURm8RH-1">
+          <mxGeometry x="930" y="580" width="220" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Z5" id="krf2049CZrJvVD8HhmNB">
+    <mxGraphModel dx="1830" dy="894" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="gUwqhtHOKScAvAXBxNtg-0" />
+        <mxCell id="gUwqhtHOKScAvAXBxNtg-1" parent="gUwqhtHOKScAvAXBxNtg-0" />
+        <mxCell id="gUwqhtHOKScAvAXBxNtg-45" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" vertex="1" parent="gUwqhtHOKScAvAXBxNtg-1">
+          <mxGeometry x="370" y="771" width="813" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="gUwqhtHOKScAvAXBxNtg-46" value="&lt;h2 data-end=&quot;591&quot; data-start=&quot;545&quot;&gt;Z5 - Model Registry &amp;amp; Governance&lt;/h2&gt;&lt;p data-end=&quot;620&quot; data-start=&quot;593&quot;&gt;&lt;/p&gt;" style="text;whiteSpace=wrap;html=1;verticalAlign=middle;fontSize=12;align=center;" vertex="1" parent="gUwqhtHOKScAvAXBxNtg-1">
+          <mxGeometry x="510" y="801" width="673" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gUwqhtHOKScAvAXBxNtg-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;flowAnimation=1;" edge="1" parent="gUwqhtHOKScAvAXBxNtg-1" source="gUwqhtHOKScAvAXBxNtg-48" target="gUwqhtHOKScAvAXBxNtg-50">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gUwqhtHOKScAvAXBxNtg-48" value="Candidate Model Registry&#xa;(Staging / Não Confiável)" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="gUwqhtHOKScAvAXBxNtg-1">
+          <mxGeometry x="940" y="891" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gUwqhtHOKScAvAXBxNtg-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;flowAnimation=1;" edge="1" parent="gUwqhtHOKScAvAXBxNtg-1" source="gUwqhtHOKScAvAXBxNtg-50" target="gUwqhtHOKScAvAXBxNtg-54">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gUwqhtHOKScAvAXBxNtg-50" value="Policies, Risk &amp; Approval Gates&#xa;(Security, LGPD, Compliance, Ética)" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="gUwqhtHOKScAvAXBxNtg-1">
+          <mxGeometry x="680" y="891" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gUwqhtHOKScAvAXBxNtg-54" value="Prod Model Registry (Assinado / Confiável)&#xa;Fonte Única de Verdade" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="gUwqhtHOKScAvAXBxNtg-1">
+          <mxGeometry x="410" y="891" width="220" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

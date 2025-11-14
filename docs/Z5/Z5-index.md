@@ -1,5 +1,7 @@
 # Z5 — Model Registry & Governance (Fonte Única de Verdade)
 
+↩️ [Voltar ao README — Mapa Z0–Z9](../../README.md)
+
 ![Diagram](../../assets/Project_Diagram-Z5.drawio.svg)
 
 > A Z5 transforma **modelos candidatos** vindos da Z4 em **versões governadas** para consumo seguro na Z6. É o **catálogo imutável** de artefatos assinados, políticas, evidências e decisões — onde acontecem **gates de aceite, promoção, revogação** e todo o vínculo com **Model Card, SCDR/ADR, SBOM, proveniência** e **mudança controlada**.

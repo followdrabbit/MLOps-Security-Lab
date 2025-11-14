@@ -1,5 +1,7 @@
 # Z6 — Model Serving & Inference
 
+↩️ [Voltar ao README — Mapa Z0–Z9](../../README.md)
+
 ![Diagram](../../assets/Project_Diagram-Z6.drawio.svg)
 
 > A Z6 expõe **modelos aprovados** (vindos da Z5) para **inferência on-line** (baixa latência) e **batch** (alta vazão) com **portas de entrada controladas**, **políticas de segurança na borda e no runtime**, e **trilhas de auditoria completas**.

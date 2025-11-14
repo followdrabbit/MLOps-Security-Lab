@@ -1,5 +1,7 @@
 # Z4 — Model Factory (Dev/Train & Security by Design)
 
+↩️ [Voltar ao README — Mapa Z0–Z9](../../README.md)
+
 ![Diagram](../../assets/Project_Diagram-Z4.drawio.svg)
 
 > A Z4 é a **fábrica de modelos**: onde cientistas e engenheiros treinam, validam e **endurecem** modelos antes que qualquer artefato possa ser registrado e promovido. Mantém alinhamento total com a Z3 (dados curados & features) e entrega apenas **artefatos assinados** para a Z5. Estrutura, estilo e profundidade seguem o padrão dos documentos Z0–Z3. 

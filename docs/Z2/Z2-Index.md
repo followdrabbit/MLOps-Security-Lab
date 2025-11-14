@@ -1,5 +1,7 @@
 # Z2 — Raw Data Lake (Restricted)
 
+↩️ [Voltar ao README — Mapa Z0–Z9](../../README.md)
+
 ![Diagram](../../assets/Project_Diagram-Z2.drawio.svg)
 
 ## 1. Papel da Z2 no MLOps Security Lab

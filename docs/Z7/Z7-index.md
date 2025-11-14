@@ -1,5 +1,7 @@
 # Z7 — Consumers & Business Apps
 
+↩️ [Voltar ao README — Mapa Z0–Z9](../../README.md)
+
 *(Core/Risk/Fraud • Canais Internos • Contratos de API • Uso Responsável de Modelos • Privacidade por Padrão)*
 
 ![Diagram](../../assets/Project_Diagram-Z7.drawio.svg)
@@ -10,7 +12,7 @@
 
 ## 1) Papel da Z7 no MLOps Security Lab
 
-**Objetivo central:** habilitar **decisões de negócio** com IA/ML **sem exponor storage bruto**, respeitando **contratos de API**, **minimização de dados**, **LGPD** e **trilhas de auditoria**.
+**Objetivo central:** habilitar **decisões de negócio** com IA/ML **sem expor storage bruto**, respeitando **contratos de API**, **minimização de dados**, **LGPD** e **trilhas de auditoria**.
 
 **Resultados-chave:**
 
@@ -18,6 +20,8 @@
 * Consumir **saídas batch/online** **apenas** pela **Scored Output Access API (Z6-2.7)** — **nunca** direto do bucket.
 * Aplicar **políticas de uso** (escopo, propósito, janelas, thresholds) e **UI privacy-by-default**.
 * Produzir **logs/métricas** de consumo (latência, erro, custo, cobertura) para **Z9**.
+
+> 🟡 **Regra de Ouro (Z7)** — Consumo **NUNCA** direto de buckets/tabelas. Sempre via **Inference/LLM Gateway (Z6)** no on-line ou via **Scored Output Access API (Z6-2.7)** no batch/online.
 
 ---
 
@@ -45,7 +49,7 @@
 * Combina **regras de negócio** com **scores** (cut-offs, rejeição manual, *hold*).
 * **Explainability de produção** (quando permitido) para auditoria humana.
 
-### 2.5 Client Adapter / SDK (Contrato de Consumo) — [Detalhamento](./Z7-2.51.md)
+### 2.5 Client Adapter / SDK (Contrato de Consumo) — [Detalhamento](./Z7-2.5.md)
 
 * Bibliotecas internas padronizando **Auth**, **retries**, **idempotência**, **masking** e **telemetria** ao chamar Z6.
 * Evita **acoplamento frágil** entre dezenas de sistemas e os contratos de inferência.

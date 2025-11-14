@@ -1,5 +1,7 @@
 # Z1 — Ingestion & Security Gateway
 
+↩️ [Voltar ao README — Mapa Z0–Z9](../../README.md)
+
 ![Diagram](../../assets/Project_Diagram-Z1.drawio.svg)
 
 ## 1. Papel da Z1 no MLOps Security Lab
@@ -32,7 +34,7 @@ Se não passa por Z1, **não entra no ecossistema de dados e modelos**.
 
 A Z1 é composta por blocos que, juntos, formam o **Ingestion & Security Gateway**.
 
-### 2.1 Reverse Proxy / API Gateway (Ingestion Gateway) - [Detalhamento](./Z1-2.1.md))
+### 2.1 Reverse Proxy / API Gateway (Ingestion Gateway) - [Detalhamento](./Z1-2.1.md)
 
 Responsável por:
 

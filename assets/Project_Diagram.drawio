@@ -1,4 +1,4 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.8 Chrome/140.0.7339.240 Electron/38.4.0 Safari/537.36" version="28.2.8" pages="7">
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.8 Chrome/140.0.7339.240 Electron/38.4.0 Safari/537.36" version="28.2.8" pages="9">
   <diagram name="MLOPS" id="Idk3U2ZkPH-DtoqKMZVC">
     <mxGraphModel dx="1281" dy="1795" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -527,6 +527,70 @@
         </mxCell>
         <mxCell id="gUwqhtHOKScAvAXBxNtg-54" value="Prod Model Registry (Assinado / Confiável)&#xa;Fonte Única de Verdade" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="gUwqhtHOKScAvAXBxNtg-1">
           <mxGeometry x="410" y="891" width="220" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Z6" id="borq2bHNK4gl0oR-l8k9">
+    <mxGraphModel dx="2135" dy="1043" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="uT5SpwtRvO7FFjEtW_8O-0" />
+        <mxCell id="uT5SpwtRvO7FFjEtW_8O-1" parent="uT5SpwtRvO7FFjEtW_8O-0" />
+        <mxCell id="uT5SpwtRvO7FFjEtW_8O-55" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" vertex="1" parent="uT5SpwtRvO7FFjEtW_8O-1">
+          <mxGeometry x="370" y="1161" width="813" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="uT5SpwtRvO7FFjEtW_8O-56" value="&lt;h2 data-end=&quot;591&quot; data-start=&quot;545&quot;&gt;Z6 - Model Serving &amp;amp; Inference&lt;/h2&gt;&lt;p data-end=&quot;620&quot; data-start=&quot;593&quot;&gt;&lt;/p&gt;" style="text;whiteSpace=wrap;html=1;verticalAlign=middle;fontSize=12;align=center;" vertex="1" parent="uT5SpwtRvO7FFjEtW_8O-1">
+          <mxGeometry x="370" y="1191" width="810" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="uT5SpwtRvO7FFjEtW_8O-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;flowAnimation=1;" edge="1" parent="uT5SpwtRvO7FFjEtW_8O-1" source="uT5SpwtRvO7FFjEtW_8O-58" target="uT5SpwtRvO7FFjEtW_8O-86">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uT5SpwtRvO7FFjEtW_8O-58" value="Batch Inference Orchestrator&#xa;(Jobs com Service Accounts, Modelos do Prod Registry,Acesso Restrito a Dados de Saída)" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="uT5SpwtRvO7FFjEtW_8O-1">
+          <mxGeometry x="410" y="1260" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uT5SpwtRvO7FFjEtW_8O-59" value="Online Inference Services (Modelos Clássicos)&#xa;(Pods/Microservices Isolados, Service Accounts, NetworkPolicies, Carregam Somente Modelos do Prod Registry)" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="uT5SpwtRvO7FFjEtW_8O-1">
+          <mxGeometry x="656.5" y="1260" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uT5SpwtRvO7FFjEtW_8O-60" value="LLM Model Service / Provider API&#xa;(Interno ou Externo Confiável, Acessível Apenas via LLM Gateway, Modelos Assinados / Policies de Uso)" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="uT5SpwtRvO7FFjEtW_8O-1">
+          <mxGeometry x="920" y="1260" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uT5SpwtRvO7FFjEtW_8O-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;flowAnimation=1;" edge="1" parent="uT5SpwtRvO7FFjEtW_8O-1" source="uT5SpwtRvO7FFjEtW_8O-62" target="uT5SpwtRvO7FFjEtW_8O-60">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uT5SpwtRvO7FFjEtW_8O-62" value="LLM/GenAI Security Gateway&#xa;(Prompt/Input Validation, Context &amp; Policy Enforcement, PII Masking, Anti Prompt Injection, Output Filtering &amp; Exfiltração Controlada)" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="uT5SpwtRvO7FFjEtW_8O-1">
+          <mxGeometry x="920" y="1411" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uT5SpwtRvO7FFjEtW_8O-63" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;flowAnimation=1;" edge="1" parent="uT5SpwtRvO7FFjEtW_8O-1" source="uT5SpwtRvO7FFjEtW_8O-65" target="uT5SpwtRvO7FFjEtW_8O-59">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uT5SpwtRvO7FFjEtW_8O-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;flowAnimation=1;" edge="1" parent="uT5SpwtRvO7FFjEtW_8O-1" source="uT5SpwtRvO7FFjEtW_8O-65" target="uT5SpwtRvO7FFjEtW_8O-62">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uT5SpwtRvO7FFjEtW_8O-65" value="Inference Gateway&#xa;(API GW + WAF + AuthN/AuthZ via IAM, Rate Limiting, mTLS, Audit)" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="uT5SpwtRvO7FFjEtW_8O-1">
+          <mxGeometry x="656.5" y="1561" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uT5SpwtRvO7FFjEtW_8O-86" value="Scored Output Store / Data Services&#xa;(Tabelas/Views/Eventos Controlados, ACL, Versionamento, Auditoria)" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="uT5SpwtRvO7FFjEtW_8O-1">
+          <mxGeometry x="410" y="1411" width="220" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Z7" id="4fkQ8MbzO4zMG9ThldAB">
+    <mxGraphModel dx="1830" dy="894" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="IXB2eYL9VQAi819lFMZX-0" />
+        <mxCell id="IXB2eYL9VQAi819lFMZX-1" parent="IXB2eYL9VQAi819lFMZX-0" />
+        <mxCell id="IXB2eYL9VQAi819lFMZX-66" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" vertex="1" parent="IXB2eYL9VQAi819lFMZX-1">
+          <mxGeometry x="247" y="440" width="333" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="IXB2eYL9VQAi819lFMZX-67" value="&lt;h2 data-end=&quot;591&quot; data-start=&quot;545&quot;&gt;Z7 - Consumers &amp;amp; Business Apps&lt;/h2&gt;&lt;p data-end=&quot;620&quot; data-start=&quot;593&quot;&gt;&lt;/p&gt;" style="text;whiteSpace=wrap;html=1;verticalAlign=middle;fontSize=12;align=center;" vertex="1" parent="IXB2eYL9VQAi819lFMZX-1">
+          <mxGeometry x="247" y="470" width="333" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IXB2eYL9VQAi819lFMZX-70" value="Core Banking / Risk / Fraud Engines" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="IXB2eYL9VQAi819lFMZX-1">
+          <mxGeometry x="303.5" y="690" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="IXB2eYL9VQAi819lFMZX-72" value="Internal Apps / Chatbots / Portais" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="IXB2eYL9VQAi819lFMZX-1">
+          <mxGeometry x="303.5" y="840" width="220" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

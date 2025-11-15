@@ -108,9 +108,9 @@ Como o foco do projeto é segurança, observe sempre:
 * Não versionar:
 
   * `.env`
-  * chaves privadas
-  * dumps de banco
-  * arquivos com dados sensíveis
+  * Chaves privadas
+  * Dumps de banco
+  * Arquivos com dados sensíveis
 * Usar variáveis de ambiente ou secret managers (quando aplicável).
 * Se encontrar algum problema de segurança:
 
@@ -131,5 +131,19 @@ Antes de abrir um PR:
 
 ---
 
-Se tiver dúvida sobre como contribuir, abrir um PR ou estruturar uma feature, sinta-se à vontade para abrir uma **issue** com a tag `question` ou `help wanted`.
+## 👥 Revisores e CODEOWNERS
 
+Este repositório utiliza o arquivo `CODEOWNERS` para definir responsáveis por revisão de código.
+
+* Pull Requests para `dev` e `main` **devem** ser aprovados por pelo menos um **Code Owner** (quando aplicável).
+* As regras de proteção de branch impedem:
+
+  * Push direto em `main` e `dev`;
+  * Merge sem CI verde;
+  * Merge sem aprovação dos revisores obrigatórios.
+
+Se o seu PR afetar áreas críticas (segurança, infraestrutura, CI/CD), é esperado que você envolva o(s) Code Owner(s) correspondente(s).
+
+---
+
+Se tiver dúvida sobre como contribuir, abrir um PR ou estruturar uma feature, sinta-se à vontade para abrir uma **issue** com a tag `question` ou `help wanted`.

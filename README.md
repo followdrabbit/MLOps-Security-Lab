@@ -25,7 +25,7 @@
 
 | Zona   | Função (Teórica) | Artefatos práticos (Docs / Serviços) | Riscos principais | Controles / Gates |
 | ------ | ------ | ------ | ------ | ------ |
-| [**Z0**](./docs/Z0-index.md) | Fontes externas, parceiras e internas | DAGs de ingestão, contratos de schema, catálogos de fonte | Data poisoning, arquivos malformados | Allowlist, schema/MIME, validação de origem |
+| [**Z0**](./docs/Z0/Z0-index.md) | Fontes externas, parceiras e internas | DAGs de ingestão, contratos de schema, catálogos de fonte | Data poisoning, arquivos malformados | Allowlist, schema/MIME, validação de origem |
 | [**Z1**](./docs/Z1/Z1-index.md) | Camada de **ingestão controlada** | Reverse Proxy/API GW + WAF, AuthN/AuthZ, Content Validation, Anti-malware/CDR, ETL/MQ | DoS, malware, exfiltração via upload | Rate limiting/throttling, limites de tamanho, CDR, sandbox |
 | [**Z2**](./docs/Z2/Z2-index.md) | Data lake bruto restrito | Buckets MinIO criptografados, versionados e assinados | Vazamento, alteração maliciosa | Criptografia, políticas de bucket, isolamento de rede |
 | [**Z3**](./docs/Z3/Z3-index.md) | Dados curados & Feature Store  | Zonas curadas, feature store versionada | Drift silencioso, exposed PII | Catálogo, classificação, políticas de acesso |

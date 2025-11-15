@@ -72,6 +72,8 @@
 
 ## 1) Arquitetura Conceitual (Z0–Z9)
 
+![Diagram](./assets/Project_Diagram.drawio.svg)
+
 A plataforma é organizada em 10 zonas principais, cobrindo desde as fontes de dados até a observabilidade e auditoria:
 
 - **Z0 — Data Sources**  

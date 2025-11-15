@@ -1,0 +1,8 @@
+# Dono global
+*          @followdrabbit
+
+# Documentação de hardening
+/docs/hardening/    @followdrabbit
+
+# Infra / IaC (se existir)
+infra/              @followdrabbit

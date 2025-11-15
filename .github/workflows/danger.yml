@@ -1,0 +1,32 @@
+name: 🔍 Danger PR Review
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+      - feature/**
+      - fix/**
+
+permissions:
+  contents: read
+  pull-requests: write
+  checks: write
+  statuses: write
+
+jobs:
+  danger:
+    name: Run Danger JS
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Executar Danger JS
+        uses: danger/danger-js@11.2.6
+        with:
+          args: "--dangerfile ./dangerfile.js"
+        env:
+          # Usa o token padrão do GitHub Actions
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

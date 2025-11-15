@@ -1,4 +1,4 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.8 Chrome/140.0.7339.240 Electron/38.4.0 Safari/537.36" version="28.2.8" pages="9">
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.8 Chrome/140.0.7339.240 Electron/38.4.0 Safari/537.36" version="28.2.8" pages="11">
   <diagram name="MLOPS" id="Idk3U2ZkPH-DtoqKMZVC">
     <mxGraphModel dx="1281" dy="1795" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -591,6 +591,61 @@
         </mxCell>
         <mxCell id="IXB2eYL9VQAi819lFMZX-72" value="Internal Apps / Chatbots / Portais" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="IXB2eYL9VQAi819lFMZX-1">
           <mxGeometry x="303.5" y="840" width="220" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Z8" id="xm9ID6ZRXCn5wwQ1SqR0">
+    <mxGraphModel dx="1308" dy="-126" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="l-AsbZ50VMNYtXsGMRZN-0" />
+        <mxCell id="l-AsbZ50VMNYtXsGMRZN-1" parent="l-AsbZ50VMNYtXsGMRZN-0" />
+        <mxCell id="l-AsbZ50VMNYtXsGMRZN-73" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" vertex="1" parent="l-AsbZ50VMNYtXsGMRZN-1">
+          <mxGeometry x="910" y="1240" width="593.5" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="l-AsbZ50VMNYtXsGMRZN-74" value="&lt;h2 data-end=&quot;591&quot; data-start=&quot;545&quot;&gt;Z8 - Security &amp;amp; Trust Services&lt;/h2&gt;&lt;p data-end=&quot;620&quot; data-start=&quot;593&quot;&gt;&lt;/p&gt;" style="text;whiteSpace=wrap;html=1;verticalAlign=middle;fontSize=12;align=center;" vertex="1" parent="l-AsbZ50VMNYtXsGMRZN-1">
+          <mxGeometry x="910" y="1270" width="593.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="l-AsbZ50VMNYtXsGMRZN-75" value="IAM / IdP / RBAC / ABAC / PAM" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="l-AsbZ50VMNYtXsGMRZN-1">
+          <mxGeometry x="958.5" y="1339" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="l-AsbZ50VMNYtXsGMRZN-76" value="KMS / HSM / Key Mgmt" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="l-AsbZ50VMNYtXsGMRZN-1">
+          <mxGeometry x="958.5" y="1450" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="l-AsbZ50VMNYtXsGMRZN-77" value="Secrets Manager" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="l-AsbZ50VMNYtXsGMRZN-1">
+          <mxGeometry x="958.5" y="1560" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="l-AsbZ50VMNYtXsGMRZN-78" value="DLP / MASQ / Tokenization" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="l-AsbZ50VMNYtXsGMRZN-1">
+          <mxGeometry x="1213.5" y="1339" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="l-AsbZ50VMNYtXsGMRZN-79" value="SIEM / UEBA / SOAR" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="l-AsbZ50VMNYtXsGMRZN-1">
+          <mxGeometry x="1213.5" y="1450" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="l-AsbZ50VMNYtXsGMRZN-80" value="Data Catalog &amp; Classification" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="l-AsbZ50VMNYtXsGMRZN-1">
+          <mxGeometry x="1213.5" y="1560" width="220" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Z9" id="_TMcG6uoalh8eW_XKXDr">
+    <mxGraphModel dx="481" dy="-126" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="MFu5a4rnKqcO61KLq8PF-0" />
+        <mxCell id="MFu5a4rnKqcO61KLq8PF-1" parent="MFu5a4rnKqcO61KLq8PF-0" />
+        <mxCell id="MFu5a4rnKqcO61KLq8PF-81" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" vertex="1" parent="MFu5a4rnKqcO61KLq8PF-1">
+          <mxGeometry x="1730" y="1190" width="300" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="MFu5a4rnKqcO61KLq8PF-82" value="&lt;h2 data-end=&quot;591&quot; data-start=&quot;545&quot;&gt;Z9 - Monitoring, Drift &amp;amp; Audit&lt;/h2&gt;&lt;p data-end=&quot;620&quot; data-start=&quot;593&quot;&gt;&lt;/p&gt;" style="text;whiteSpace=wrap;html=1;verticalAlign=middle;fontSize=12;align=center;" vertex="1" parent="MFu5a4rnKqcO61KLq8PF-1">
+          <mxGeometry x="1730" y="1220" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MFu5a4rnKqcO61KLq8PF-83" value="Centralized Logs" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="MFu5a4rnKqcO61KLq8PF-1">
+          <mxGeometry x="1778" y="1289" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="MFu5a4rnKqcO61KLq8PF-84" value="Drift &amp; Performance / Bias / Anomaly Monitoring" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="MFu5a4rnKqcO61KLq8PF-1">
+          <mxGeometry x="1778" y="1400" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="MFu5a4rnKqcO61KLq8PF-85" value="Compliance &amp; Audit Trails" style="text;whiteSpace=wrap;verticalAlign=middle;strokeColor=default;align=center;" vertex="1" parent="MFu5a4rnKqcO61KLq8PF-1">
+          <mxGeometry x="1778" y="1510" width="220" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

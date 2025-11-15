@@ -1,0 +1,80 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main", "dev" ]
+  pull_request:
+    branches: [ "main", "dev" ]
+
+# Princípio do mínimo privilégio para o GITHUB_TOKEN
+permissions:
+  contents: read
+
+# Evita múltiplos workflows concorrentes na mesma ref
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  python-ci:
+    name: Lint, Testes e Checagens de Segurança (Python)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cache do pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Atualizar pip
+        run: pip install --upgrade pip
+
+      - name: Instalar dependências principais
+        if: hashFiles('requirements.txt') != ''
+        run: |
+          echo "Instalando dependências de requirements.txt"
+          pip install -r requirements.txt
+
+      - name: Instalar dependências de desenvolvimento
+        if: hashFiles('requirements-dev.txt') != ''
+        run: |
+          echo "Instalando dependências de desenvolvimento"
+          pip install -r requirements-dev.txt
+
+      - name: Instalar ferramentas de qualidade e segurança
+        run: |
+          pip install ruff pytest bandit pip-audit
+
+      - name: Lint (ruff)
+        run: |
+          echo "Executando lint com ruff..."
+          ruff check .
+
+      - name: Testes (pytest)
+        if: hashFiles('tests/**/*.py') != ''
+        run: |
+          echo "Executando testes com pytest..."
+          pytest -q
+
+      - name: Análise estática de segurança (bandit)
+        run: |
+          echo "Executando Bandit..."
+          bandit -r . -ll
+
+      - name: Auditoria de dependências (pip-audit)
+        if: hashFiles('requirements.txt') != ''
+        run: |
+          echo "Executando pip-audit em requirements.txt..."
+          pip-audit -r requirements.txt

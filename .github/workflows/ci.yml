@@ -19,7 +19,7 @@ jobs:
   python-ci:
     name: Lint, Testes e Checagens de Segurança (Python)
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 10
 
     steps:
       - name: Checkout do código

@@ -1,6 +1,6 @@
 # Z0 — Data Sources (External, Partner & Internal Producers)
 
-![Diagram](../assets/Project_Diagram-Z0.drawio.svg)
+![Diagram](../../assets/Project_Diagram-Z0.drawio.svg)
 
 ## 1. Papel da Z0 no MLOps Security Lab
 

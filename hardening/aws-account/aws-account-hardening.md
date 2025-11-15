@@ -6,7 +6,7 @@ Este documento descreve como **endurecer (hardening)** a conta AWS utilizada pel
 
 * Reduzir risco de **comprometimento da conta**
 * Proteger o **ambiente de laboratório** e facilitar a futura separação entre **lab** e **prod**
-* Garantir que os serviços usados no lab (Vault, MLOps stack, etc.) rodem em uma base minimamente segura
+* Garantir que os serviços usados no lab (Vault, MLOps stack, etc.) rodem em uma base minimamente segura **sem estourar custos**
 
 ---
 
@@ -18,6 +18,8 @@ Este hardening cobre principalmente:
 * Controles **globais** aplicáveis a qualquer workload do lab
 * Itens de segurança que **não dependem de um serviço específico** (S3, EC2, etc. serão detalhados em baselines próprios)
 
+Serviços gerenciados de segurança com custo adicional (ex.: GuardDuty, Security Hub, Macie, AWS Config) aparecem em uma seção separada como **recomendados**, mas **não fazem parte do mínimo essencial do lab**.
+
 ---
 
 ## 3. Princípios Gerais
@@ -25,7 +27,7 @@ Este hardening cobre principalmente:
 1. **Root não é para uso diário**
 2. **MFA físico para operações críticas** (root e, se possível, usuários administrativos)
 3. **Privilégio mínimo** para identidades e roles (IAM)
-4. **Tudo observado**: logs centralizados (CloudTrail, Config, etc.)
+4. **Tudo observado**: pelo menos CloudTrail ativo e preservado
 5. **Tudo alertado**: eventos críticos geram notificação (e-mail / SNS)
 6. **Criptografia por padrão**, sempre que possível
 7. **Infra como código**: sempre que puder, registrar essas configs em Terraform/CloudFormation depois
@@ -193,9 +195,9 @@ Este hardening cobre principalmente:
 
 ---
 
-## 6. Logging, Auditoria e Monitoramento
+## 6. Logging, Auditoria e Monitoramento Essenciais (Baixo Custo)
 
-### 6.1 Habilitar CloudTrail multi-região
+### 6.1 Habilitar CloudTrail multi-região (mínimo essencial)
 
 **O que**
 
@@ -214,11 +216,11 @@ Este hardening cobre principalmente:
 **Como (resumo)**
 
 1. Acessar **CloudTrail → Trails**.
-2. Criar um trail novo (ex.: `org-trail` ou `lab-account-trail`):
+2. Criar um trail novo (ex.: `lab-account-trail`):
 
    * **Apply trail to all regions**: Yes
    * **Management events**: Read/Write
-   * **Data events**: pelo menos S3 e Lambda mais críticos (opcional no início)
+   * **Data events**: desabilitar ou habilitar **apenas recursos críticos** se for necessário (data events podem gerar custo maior).
    * **Log file validation**: habilitado
    * **S3 bucket**: criar um bucket dedicado, ex.: `mlops-lab-cloudtrail-logs-<id>`
 3. Garantir que o bucket de logs tenha:
@@ -226,55 +228,7 @@ Este hardening cobre principalmente:
    * Criptografia habilitada
    * Acesso público bloqueado
 
----
-
-### 6.2 Habilitar AWS Config
-
-**O que**
-
-* Habilitar **AWS Config** para rastrear o histórico de configuração dos recursos.
-
-**Por que**
-
-* Permite saber “como” um recurso estava configurado em um momento anterior.
-* Ajuda na investigação pós-incidente.
-
-**Como**
-
-1. Acessar **AWS Config**.
-2. Escolher:
-
-   * Regiões nas quais o lab opera (ex.: `us-east-1`, `sa-east-1`) ou **todas**.
-3. Configurar:
-
-   * Bucket S3 para armazenar os snapshots do Config.
-   * Regras gerenciadas básicas (ex.: recursos sem criptografia, S3 público, etc.).
-
----
-
-### 6.3 Ativar GuardDuty, Security Hub e (opcional) Macie
-
-**O que**
-
-* Ativar:
-
-  * **GuardDuty** (detecção de ameaças)
-  * **Security Hub** (painel unificado de segurança)
-  * Opcional: **Macie** (descoberta de dados sensíveis em S3)
-
-**Por que**
-
-* GuardDuty aumenta a visibilidade sobre padrões de ataque (IAM, rede, logs).
-* Security Hub consolida findings (inclusive de GuardDuty, Config, etc.).
-* Macie ajuda se você armazenar dados sensíveis nos buckets do lab.
-
-**Como (resumo)**
-
-1. Em **GuardDuty**, clicar em **Enable** na(s) região(ões) relevantes.
-2. Em **Security Hub**, clicar em **Enable Security Hub**:
-
-   * Habilitar padrões como CIS, AWS Foundations, etc.
-3. Em **Macie** (se fizer sentido para o lab), habilitar e configurar escaneamento dos buckets de dados.
+> Para o lab, o foco é **management events multi-região** (parte gratuita/bem barata). Data events podem ficar desligados ou muito restritos para não gerar custo alto.
 
 ---
 
@@ -346,13 +300,15 @@ Este hardening cobre principalmente:
 
 **Como (visão geral)**
 
-1. A partir de **CloudTrail**, enviar eventos para **CloudWatch Logs** (ou EventBridge).
+1. A partir de **CloudTrail**, enviar eventos para **CloudWatch Logs** ou **EventBridge**.
 2. Criar regras no **EventBridge** para:
 
    * Filtrar eventos específicos (ex.: `ConsoleLogin` com `userIdentity.type = Root`).
 3. Enviar esses eventos para:
 
    * **SNS topic** que dispare e-mails / integrações (ex.: webhook, n8n).
+
+> CloudWatch Logs + EventBridge + SNS têm custo, mas em um lab pequeno e com poucos eventos a fatura tende a ser baixa. Ajuste períodos e filtros para evitar volume desnecessário.
 
 ---
 
@@ -380,11 +336,135 @@ Este hardening cobre principalmente:
 
 ---
 
-## 9. Integração com GitHub (OIDC / IAM Roles)
+## 9. Serviços Gerenciados de Segurança — Recomendados (Custo Adicional)
+
+> **Não fazem parte do hardening essencial do lab**, mas valem ser considerados se o orçamento permitir ou quando o ambiente crescer.
+
+### 9.1 AWS Config (histórico de configuração)
+
+**O que**
+
+* **AWS Config** registra o histórico de configuração dos recursos e pode aplicar regras de conformidade.
+
+**Por que (benefícios)**
+
+* Permite saber “como” um recurso estava configurado em um momento anterior.
+* Ajuda na investigação pós-incidente.
+* Permite criar regras do tipo “nenhum bucket S3 pode ser público” e marcar recursos não conformes.
+
+**Custo**
+
+* Cobrança por:
+
+  * Config items gravados
+  * Regras avaliadas
+* Em lab pequeno, o custo pode ser baixo, mas se você habilitar em muitas regiões/contas, pode crescer.
+
+**Recomendação para o lab**
+
+* Se habilitar:
+
+  * Comece **apenas na região principal** do lab.
+  * Use poucas regras gerenciadas de alto impacto (ex.: S3 público, recursos sem criptografia).
+  * Monitore custo nos primeiros meses.
+
+---
+
+### 9.2 GuardDuty (detecção de ameaças)
+
+**O que**
+
+* Serviço gerenciado de **detecção de ameaças** que analisa CloudTrail, VPC Flow Logs, DNS, etc.
+
+**Por que (benefícios)**
+
+* Identifica comportamentos suspeitos:
+
+  * Credenciais comprometidas
+  * Comunicação com IPs maliciosos
+  * Atividades estranhas em IAM, EC2, etc.
+
+**Custo**
+
+* Cobrança baseada em volume de eventos analisados.
+* Pode ficar caro em ambientes grandes.
+
+**Recomendação para o lab**
+
+* Não obrigatório no lab inicial.
+* Avaliar habilitar GuardDuty:
+
+  * Em regiões específicas
+  * Por período de teste (ex.: 30 dias) para entender custo e benefício.
+
+---
+
+### 9.3 Security Hub (painel de segurança)
+
+**O que**
+
+* Serviço que agrega findings de vários serviços (GuardDuty, Config, Inspector, etc.) e aplica padrões como CIS AWS Foundations.
+
+**Por que (benefícios)**
+
+* Consolida findings em um painel único.
+* Ajuda a enxergar postura de segurança da conta.
+
+**Custo**
+
+* Cobrança por número de controles avaliados e findings.
+* Depende também de outros serviços alimentando dados (Config, GuardDuty, etc.).
+
+**Recomendação para o lab**
+
+* Interessante quando o lab crescer ou virar base para produção.
+* No momento, tratar como **nice-to-have** de médio prazo.
+
+---
+
+### 9.4 Macie (descoberta de dados sensíveis em S3)
+
+**O que**
+
+* Serviço que analisa buckets S3 em busca de dados sensíveis (PII, etc.).
+
+**Por que (benefícios)**
+
+* Ajuda a identificar onde dados sensíveis estão armazenados.
+* Útil em ambientes com muitos buckets ou dados de clientes.
+
+**Custo**
+
+* Cobrança por volume de dados analisados.
+* Pode ficar caro se você apontar Macie para muitos buckets grandes.
+
+**Recomendação para o lab**
+
+* Não faz sentido no estágio inicial, a menos que você coloque dados sensíveis reais nos buckets.
+* Avaliar somente se:
+
+  * houver forte requisito de privacidade;
+  * o lab estiver armazenando dados que simulam produção (com cuidado).
+
+---
+
+### 9.5 Checklist — Serviços Opcionais (Recomendados)
+
+```markdown
+- [ ] AWS Config avaliado (habilitar apenas em regiões/recursos críticos, se fizer sentido)
+- [ ] GuardDuty avaliado (período de teste, escopo limitado)
+- [ ] Security Hub avaliado como painel unificado (quando houver mais serviços de segurança ativos)
+- [ ] Macie avaliado apenas se houver necessidade de descobrir dados sensíveis em S3
+- [ ] Monitoramento de custo desses serviços documentado (para não estourar orçamento do lab)
+```
+
+---
+
+## 10. Integração com GitHub (OIDC / IAM Roles)
 
 > Este item conecta o hardening da conta com o hardening do repositório.
 
-### 9.1 Criar role dedicada para GitHub OIDC
+### 10.1 Criar role dedicada para GitHub OIDC
 
 **O que**
 
@@ -415,7 +495,7 @@ Este hardening cobre principalmente:
           "token.actions.githubusercontent.com:aud": "sts.amazonaws.com"
         },
         "StringLike": {
-          "token.actions.githubusercontent.com:sub": "repo:<seu-usuario- ou-org>/MLOps-Security-Lab:*"
+          "token.actions.githubusercontent.com:sub": "repo:<seu-usuario-ou-org>/MLOps-Security-Lab:*"
         }
       }
     }
@@ -428,7 +508,7 @@ Este hardening cobre principalmente:
 
 ---
 
-## 10. Organização de Contas (Lab vs Prod) — Visão Futura
+## 11. Organização de Contas (Lab vs Prod) — Visão Futura
 
 > Opcional neste momento, mas importante como visão.
 
@@ -456,7 +536,7 @@ Este hardening cobre principalmente:
 
 ---
 
-## 11. Checklist Rápido — Hardening da Conta AWS (Lab)
+## 12. Checklist Rápido — Hardening Essencial (Baixo Custo)
 
 ```markdown
 - [ ] Senha root forte, aleatória e exclusiva
@@ -466,9 +546,7 @@ Este hardening cobre principalmente:
 - [ ] Grupo de admins (Admins-Lab) criado e configurado
 - [ ] Política de privilégio mínimo definida para roles e usuários
 - [ ] Uso de Access Keys minimizado (preferência por roles e OIDC)
-- [ ] CloudTrail habilitado em todas as regiões, com log file validation
-- [ ] AWS Config habilitado, com bucket de logs dedicado
-- [ ] GuardDuty e Security Hub habilitados (Macie opcional)
+- [ ] CloudTrail habilitado em todas as regiões, com log file validation e data events apenas se necessário
 - [ ] Block Public Access do S3 habilitado em nível de conta
 - [ ] Criptografia padrão para buckets S3 habilitada
 - [ ] Alertas de login root e eventos sensíveis configurados (EventBridge + SNS)

@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - name: Checkout código
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Executar Danger JS
         uses: danger/danger-js@11.2.6

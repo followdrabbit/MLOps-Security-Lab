@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Executar Danger JS
-        uses: danger/danger-js@11.2.6
+        uses: danger/danger-js@13.0.5
         with:
           args: "--dangerfile ./dangerfile.js"
         env:
